@@ -8,18 +8,17 @@
 
         //need email varification 
 
-        $run = 0;
+        $sql = 0;
         if ($password == $passwordCorrect){
-            $addDb = "INSERT INTO users(email, password) VALUES('$email', '$password')";
-            $run = mysqli_query($db, $addDb);
+            $sql = mysqli_query($db, "INSERT INTO users(email, password) VALUES('$email', '$password')");
             //mail duplicate check
-            if ($run != 1){
+            if ($sql != 1){
                 echo "This email is already exists.";
                 mysqli_close($db);
                 exit();
             }
         }else{
-            echo "email or password error!!!";
+            echo "Passwords are not matching!!!";
             mysqli_close($db);
             exit();
         }
@@ -66,7 +65,7 @@
             <input type="password" placeholder="password" name="password"/>
             <input type="password" placeholder="password correct" name="passwordCorrect"/>
             <button name="submit">Sign up</button>
-            <p class="message">Already registered? <a href="./signup.php">Login</a></p>
+            <p class="message">Already registered? <a href="./login.php">Login</a></p>
             </form>
         </div>
     </div>

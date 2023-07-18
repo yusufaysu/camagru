@@ -2,7 +2,20 @@
     include('../dbConnect.php');
 
     if(isset($_POST['submit'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
+        $sql = mysqli_query($db, "SELECT id FROM users WHERE email = '$email' and password = '$password'");
+        $count = mysqli_num_rows($sql);
+
+        
+        if ($count == 1){
+            echo "loool";
+        }else{
+            echo "Email or password is invalid!!!";
+            mysqli_close($db);
+            exit();
+        }
     }
 
 ?>
@@ -38,9 +51,9 @@
     </div>
     <script type="text/javascript" src="../scripts/header.js"></script>
 
-    <div class="login-page" action="login.php" method="POST">
+    <div class="login-page">
         <div class="form">
-            <form class="login-form">
+            <form class="login-form" action="login.php" method="POST">
             <input type="email" placeholder="email" name="email"/>
             <input type="password" placeholder="password" name="password"/>
             <button name="submit">login</button>
