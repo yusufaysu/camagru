@@ -24,7 +24,6 @@
         }
         mysqli_close($db);
     }
-
 ?>
 
 <!DOCTYPE html>
