@@ -17,7 +17,6 @@
             exit();
         }
     }
-
 ?>
 
 <!DOCTYPE html>
