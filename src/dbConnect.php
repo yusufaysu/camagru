@@ -1,8 +1,8 @@
 <?php
 
-    $host='localhost';
+    $host='db';
     $root='root';
-    $dbPassword='';
+    $dbPassword='123';
     $dbName='camagru';
 
     $db = mysqli_connect($host, $root, $dbPassword, $dbName);
