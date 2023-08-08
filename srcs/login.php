@@ -11,6 +11,9 @@
         
         if ($count == 1){
             echo "loool";
+        }
+        else if ($count > 1){
+            echo "ÆHÆ";
         }else{
             echo "Email or password is invalid!!!";
             mysqli_close($db);
@@ -21,14 +24,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/login.css">
-    <link rel="stylesheet" href="../styles/header.css">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/login.css">
+        <link rel="stylesheet" href="../styles/header.css">
+        <title>Document</title>
+    </head>
+    <body>
     <header>
         <link rel="stylesheet" href="header.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
