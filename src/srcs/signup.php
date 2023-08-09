@@ -3,26 +3,29 @@
 
     if (isset($_POST['submit'])){
         $email=$_POST['email'];
+        $username=$_POST['username'];
         $password=$_POST['password'];
         $passwordCorrect=$_POST['passwordCorrect'];
+        
+        $errors = array();
+
+        if (empty($email) || empty($username) || empty($password) || empty($passwordCorrect)){
+            $errors['blank'] = "You can't leave any blank.";
+        }
 
         //need email varification 
 
-        $sql = 0;
         if ($password == $passwordCorrect){
-            $sql = mysqli_query($db, "INSERT INTO users(email, password) VALUES('$email', '$password')");
-            //mail duplicate check
-            if ($sql != 1){
-                echo "This email is already exists.";
-                mysqli_close($db);
-                exit();
+            try {
+                $sql = mysqli_query($db, "INSERT INTO users(email, username, password) VALUES('$email', '$username', '$password')");
+                header( "refresh:3;url=./home.php" );
+                $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";
+            }catch(mysqli_sql_exception $e){
+                $errors['duplicate'] = "Username or Email is already taken.";
             }
         }else{
-            echo "Passwords are not matching!!!";
-            mysqli_close($db);
-            exit();
+            $errors['notMatch'] = "Passwords are not matching";
         }
-        mysqli_close($db);
     }
 ?>
 
@@ -48,6 +51,7 @@
         </div>
         <p class="menu cta">Menu</p>
     </header>
+
     <div class="overlay">
         <a class="close">&times;</a>
         <div class="overlay__content">
@@ -60,6 +64,21 @@
     <div class="login-page">
         <div class="form">
             <form class="login-form" action="signup.php" method="POST">
+            <p style="color: red">
+            <?php
+                if (isset($errors['blank'])){
+                    echo $errors['blank'];
+                }
+                else if(isset($errors['duplicate'])){
+                    echo $errors['duplicate'];
+                }
+                else if(isset($errors['notMatch'])){
+                    echo $errors['notMatch'];
+                }
+            ?>
+            </p>
+            <p style="color: green"><?php if(isset($errors['success'])){ echo $errors['success'];} ?></p>
+            <input type="username" placeholder="username" name="username"/>
             <input type="email" placeholder="email" name="email"/>
             <input type="password" placeholder="password" name="password"/>
             <input type="password" placeholder="password correct" name="passwordCorrect"/>

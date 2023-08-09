@@ -5,19 +5,19 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = mysqli_query($db, "SELECT id FROM users WHERE email = '$email' and password = '$password'");
-        $count = mysqli_num_rows($sql);
+        $errors = array();
 
-        
-        if ($count == 1){
-            echo "loool";
+        if (empty($email) || empty($password)){
+            $errors['blank'] = "You can't leave any blank.";
         }
-        else if ($count > 1){
-            echo "ÆHÆ";
+            
+        $sql = mysqli_query($db, "SELECT id FROM users WHERE email = '$email' and password = '$password'");
+        $obj = mysqli_fetch_assoc($sql);
+
+        if (mysqli_num_rows($sql)){
+            header("location:./home.php");
         }else{
-            echo "Email or password is invalid!!!";
-            mysqli_close($db);
-            exit();
+            $errors['invalid'] = "Invalid email or password";
         }
     }
 ?>
@@ -44,6 +44,7 @@
         </div>
         <p class="menu cta">Menu</p>
     </header>
+
     <div class="overlay">
         <a class="close">&times;</a>
         <div class="overlay__content">
@@ -56,6 +57,16 @@
     <div class="login-page">
         <div class="form">
             <form class="login-form" action="login.php" method="POST">
+            <p style="color: red">
+            <?php
+                if (isset($errors['blank'])){
+                    echo $errors['blank'];
+                }
+                else if(isset($errors['invalid'])){
+                    echo $errors['invalid'];
+                }
+            ?>
+            </p>
             <input type="email" placeholder="email" name="email"/>
             <input type="password" placeholder="password" name="password"/>
             <button name="submit">login</button>
