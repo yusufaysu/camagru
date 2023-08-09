@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="./styles/header.css">
         <title>Camagru</title>
     </head>
-    <body>
+    <body style='background: #29372e'>
         <header>
             <link rel="stylesheet" href="header.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">

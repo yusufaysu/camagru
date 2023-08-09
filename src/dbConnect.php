@@ -1,5 +1,4 @@
 <?php
-
     $host='db';
     $root='root';
     $dbPassword='123';
