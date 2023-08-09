@@ -46,7 +46,7 @@
         <nav>
         </nav>
         <div class="cta_content">
-            <a class="cta" href="../index.php">Home</a>
+            <a class="cta" href="/">Home</a>
             <a class="cta" href="./login.php">Login</a>
         </div>
         <p class="menu cta">Menu</p>
@@ -55,7 +55,7 @@
     <div class="overlay">
         <a class="close">&times;</a>
         <div class="overlay__content">
-            <a href="../index.php">Home</a>
+            <a href="/">Home</a>
             <a href="./login.php">Login</a>
         </div>
     </div>
