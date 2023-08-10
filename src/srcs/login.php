@@ -1,5 +1,12 @@
 <?php
-    include('../dbConnect.php');
+    include('../scripts.php');
+
+    session_start();
+
+    if (isset($_SESSION['user_id'])){
+        header("location:./home.php");
+        exit();
+    }
 
     if(isset($_POST['submit'])){
         $email = $_POST['email'];
@@ -9,15 +16,28 @@
 
         if (empty($email) || empty($password)){
             $errors['blank'] = "You can't leave any blank.";
-        }
-            
-        $sql = mysqli_query($db, "SELECT id FROM users WHERE email = '$email' and password = '$password'");
-        $obj = mysqli_fetch_assoc($sql);
-
-        if (mysqli_num_rows($sql)){
-            header("location:./home.php");
-        }else{
-            $errors['invalid'] = "Invalid email or password";
+        }else {
+            $conn = connectDB();
+            $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            if ($row = $result->fetch_assoc()) {
+                // Kullanıcının girdiği şifreyi doğrula
+                if ($password == $row['password']) {
+                    $_SESSION['user_id'] = $row['id'];
+                    header("Location: ./home.php");
+                    exit();
+                } else {
+                    $errors['invalid'] = "Invalid email or password";
+                }
+            } else {
+                $errors['invalid'] = "Invalid email or password";
+            }
+    
+            $stmt->close();
+            $conn->close();
         }
     }
 ?>

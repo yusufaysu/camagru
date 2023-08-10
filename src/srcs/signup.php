@@ -1,5 +1,13 @@
 <?php
-    include('../dbConnect.php');
+    include('../scripts.php');
+
+    session_start();
+
+    if (isset($_SESSION['user_id'])){
+        header("location:./home.php");
+        exit();
+    }
+
 
     if (isset($_POST['submit'])){
         $email=$_POST['email'];
@@ -17,9 +25,26 @@
 
         if ($password == $passwordCorrect){
             try {
-                $sql = mysqli_query($db, "INSERT INTO users(email, username, password) VALUES('$email', '$username', '$password')");
-                header( "refresh:3;url=./home.php" );
-                $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";
+                $conn = connectDB();
+
+                $hashedPassword = password_hash($password, 1);
+
+                $stmt = $conn->prepare("INSERT INTO users (email, username, password) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $email, $username, $password);
+
+                /*$sql = mysqli_query($db, "INSERT INTO users(email, username, password) VALUES('$email', '$username', '$password')");
+                header( "refresh:3;url=./login.php" );
+                $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";*/
+
+                if ($stmt->execute()) {
+                    header("refresh:3;url=./login.php");
+                    $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";
+                } else {
+                    $errors['duplicate'] = "Username or Email is already taken.";
+                }
+
+                $stmt->close();
+                $conn->close();
             }catch(mysqli_sql_exception $e){
                 $errors['duplicate'] = "Username or Email is already taken.";
             }
