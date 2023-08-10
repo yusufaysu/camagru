@@ -6,5 +6,4 @@
     signout();
     header("Location:/");
     exit();
-
 ?>
