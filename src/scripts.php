@@ -8,7 +8,7 @@
         $conn = new mysqli($host, $root, $dbPassword, $dbName);
         
         if ($conn->connect_error){
-            die("Bağlantı hatası: " . $conn->connect_error);
+            die("Connection error: " . $conn->connect_error);
         }
         return $conn;
     }
