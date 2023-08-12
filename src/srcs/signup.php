@@ -37,8 +37,7 @@
                 $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";*/
 
                 if ($stmt->execute()) {
-                    header("refresh:3;url=./login.php");
-                    $errors['success'] = "Registration is successful, you are being redirected to login in 3 seconds.";
+                    header("location:./login.php");
                 } else {
                     $errors['duplicate'] = "Username or Email is already taken.";
                 }
@@ -102,7 +101,6 @@
                 }
             ?>
             </p>
-            <p style="color: green"><?php if(isset($errors['success'])){ echo $errors['success'];} ?></p>
             <input type="username" placeholder="username" name="username"/>
             <input type="email" placeholder="email" name="email"/>
             <input type="password" placeholder="password" name="password"/>
