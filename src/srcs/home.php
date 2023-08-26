@@ -35,6 +35,8 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../styles/header.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/post.css">
         <title>Camagru</title>
     </head>
     <body style='background: #29372e'>
@@ -58,10 +60,68 @@
             </div>
         </div>
         <script type="text/javascript" src="../scripts/header.js"></script>
+        
 
-        welcome <?php echo $username;?>
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="../images/star.png" alt="Profile Image" class="profile-image">
+                <span class="username"><?php echo $username;?></span>
+            </div>
+            <div class="post">
+                <img src="../images/post_image.jpg" alt="Post Image">
+                <div class="post-info">
+                    <span class="username"><?php echo $username;?></span>
+                    <span class="date"> - 21/08.2023 -</span>
+                    <span class="likes">100👍</span>
+                    <button class="like-button">Beğen</button>
+                </div>
+                <div class="comments">
+                    <div class="comment">user1: selam!!</div>
+                    <div class="comment">user2: selam!!</div>
+                </div>
+                <div class="comment-input">
+                    <input type="text" id="commentText" placeholder="Yorum yap...">
+                    <button onclick="addComment()">Yorum Yap</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post">
+            <img src="../images/user_avatar.png" alt="Post Image">
+            <div class="post-info">
+                <span class="username"><?php echo $username;?></span>
+                <span class="date">date_here</span>
+                <span class="likes">like_count_here</span>
+            </div>
+            <div class="comments">
+                <div class="comment">user1: selam!!</div>
+                <div class="comment">user2: selam!!</div>
+            </div>
+            <div class="comment-input">
+                <input type="text" id="commentText" placeholder="Yorum yap...">
+                <button onclick="addComment()">Yorum Yap</button>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post">
+            <img src="../images/logo.png" alt="Post Image">
+            <div class="post-info">
+                <span class="username"><?php echo $username;?></span>
+                <span class="date">date_here</span>
+                <span class="likes">like_count_here</span>
+            </div>
+            <div class="comments">
+                <div class="comment">user1: selam!!</div>
+                <div class="comment">user2: selam!!</div>
+            </div>
+            <div class="comment-input">
+                <input type="text" id="commentText" placeholder="Yorum yap...">
+                <button onclick="addComment()">Yorum Yap</button>
+            </div>
+        </div>
 
 
     </body>
 </html>
-
