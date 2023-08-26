@@ -60,8 +60,6 @@
             </div>
         </div>
         <script type="text/javascript" src="../scripts/header.js"></script>
-        
-
         <div class="post-container">
             <div class="user-profile">
                 <img src="../images/star.png" alt="Profile Image" class="profile-image">
