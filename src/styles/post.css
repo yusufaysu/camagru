@@ -6,9 +6,9 @@
     flex-direction: column;
     padding: 20px;
     background-color: #29372e;
-  }
+}
   
-  .post {
+.post {
     width: 400px;
     border: 1px solid #24252a;
     background-color: #24252a;
@@ -17,75 +17,75 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 10px; /* Köşe yuvarlatma miktarını ayarlayabilirsiniz */
-  }
+}
   
-  .post img {
+.post img {
     width: 100%;
     height: auto;
-  }
+}
   
-  .post-info {
+.post-info {
     text-align: center;
     margin-top: 10px;
-  }
+}
   
-  .username {
+.username {
     font-weight: bold;
-  }
+}
   
-  .date,
-  .likes {
+.date,
+.likes {
     color: #888;
     font-size: 0.8rem;
-  }
+}
 
-  .likes{
+.likes{
     margin-left: auto;
-  }
+}
 
-  .comments {
+.comments {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #1a1a1d;
-  }
+}
   
-  .comment {
+.comment {
     margin-bottom: 5px;
     color: #888;
     font-size: 0.8rem;
-  }
+}
 
-  .comment-input {
+.comment-input {
     margin-top: 10px;
     padding-top: 10px;
     border-top: 1px solid #1a1a1d;
     display: flex;
     align-items: center;
-  }
+}
   
-  .comment-input input[type="text"] {
+.comment-input input[type="text"] {
     flex: 1;
     padding: 5px;
     border: 1px solid #1a1a1d;
     background-color: #24252a;
     border-radius: 5px;
     margin-right: 10px;
-  }
-  
-  .comment-input button {
+}
+
+.comment-input button {
     padding: 5px 10px;
     background-color: #3f8541;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
   
-  .comment-input button:hover {
+.comment-input button:hover {
     background-color: #367438;
-  }
+}
 
-  .like-button {
+.like-button {
     margin-left: 10px;
     padding: 5px 10px;
     background-color: #3f8541;
@@ -93,28 +93,28 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .like-button:hover {
-    background-color: #367438;
-  }
+}
 
-  .user-profile {
+.like-button:hover {
+    background-color: #367438;
+}
+
+.user-profile {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
     background-color: #24252a;
-  }
-  
-  .profile-image {
+}
+
+.profile-image {
     width: 40px;
     height: 40px;
     border-radius: 50%; /* Profil fotoğrafını yuvarlak yapmak için */
     margin-right: 5px;
     object-fit: cover;
 }
-  
-  .username {
+
+.username {
     font-weight: bold;
     font-size: 0.9rem;
-  }
+}
