@@ -9,7 +9,7 @@
 }
   
 .post {
-    width: 400px;
+    width: 500px;
     border: 1px solid #24252a;
     background-color: #24252a;
     margin-bottom: 20px;
@@ -103,12 +103,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    background-color: #24252a;
+    /*background-color: #24252a;*/
 }
 
 .profile-image {
-    width: 40px;
-    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
     border-radius: 50%; /* Profil fotoğrafını yuvarlak yapmak için */
     margin-right: 5px;
     object-fit: cover;

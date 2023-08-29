@@ -62,11 +62,11 @@
         <script type="text/javascript" src="../scripts/header.js"></script>
 
         <div class="post-container">
-            <div class="user-profile">
-                <img src="../images/star.png" alt="Profile Image" class="profile-image">
-                <span class="username"><?php echo $username;?></span>
-            </div>
             <div class="post">
+                <div class="user-profile">
+                    <img src="../images/star.png" alt="Profile Image" class="profile-image">
+                    <span class="username"><?php echo $username;?></span>
+                </div>
                 <img src="../images/post_image.jpg" alt="Post Image">
                 <div class="post-info">
                     <span class="username"><?php echo $username;?></span>
