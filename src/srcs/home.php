@@ -37,6 +37,9 @@
         <link rel="stylesheet" href="../styles/header.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/post.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
         <title>Camagru</title>
     </head>
     <body style='background: #29372e'>
@@ -69,10 +72,16 @@
                 </div>
                 <img src="../images/post_image.jpg" alt="Post Image">
                 <div class="post-info">
-                    <span class="username"><?php echo $username;?></span>
-                    <span class="date"> - 21/08.2023 -</span>
-                    <span class="likes">100👍</span>
-                    <button class="like-button">Beğen</button>
+					<div class="block-1">
+						<span class="username"><?php echo $username;?></span>
+					</div>
+					<div class="block-2">
+						<span class="date"> - 21/08.2023 -</span>
+					</div>
+					<div class="block-3">
+						<span class="likes">100👍</span>
+						<button class="like-button">Beğen</button>
+					</div>
                 </div>
                 <div class="comments">
                     <div class="comment">user1: selam!!</div>
