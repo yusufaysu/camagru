@@ -48,7 +48,7 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
             <a class="logo" href="/"><img src="../images/logo.png" alt="logo"></a>
             <div class="cta_content">
-                <a class="cta" href="#">Profile</a>
+                <a class="cta" href="#">Settings</a>
                 <a class="cta" href="#">Post</a>
                 <a class="cta" href="signout.php">Signout</a>
             </div>
@@ -57,7 +57,7 @@
         <div class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
-                <a href="#">Profile</a>
+                <a href="#">Settings</a>
                 <a href="#">Post</a>
                 <a href="signout.php">Signout</a>
             </div>
@@ -73,12 +73,39 @@
                 <img src="../images/post_image.jpg" alt="Post Image">
                 <div class="post-info">
 					<div class="block-1">
-						<span class="username"><?php echo $username;?></span>
+                        <span class="date">21/08.2023</span>
 					</div>
 					<div class="block-2">
-						<span class="date"> - 21/08.2023 -</span>
+						<span class="likes">100👍</span>
+						<button class="like-button">Beğen</button>
 					</div>
-					<div class="block-3">
+                </div>
+                <div class="comments">
+                    <div class="comment">user1: selam!!</div>
+                    <div class="comment">user2: selam!!</div>
+                </div>
+                <div class="comment-input">
+                    <input type="text" id="commentText" placeholder="Yorum yap...">
+                    <button onclick="addComment()">Yorum Yap</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="post-container">
+            <div class="post">
+                <div class="user-profile">
+                    <img src="../images/me.jpeg" alt="Profile Image" class="profile-image">
+                    <span class="username"><?php echo $username;?></span>
+                </div>
+                <div class="image">
+                    <img src="../images/star.png" alt="Post Image">
+                </div>
+                <div class="post-info">
+					<div class="block-1">
+                        <span class="date">21/08.2023</span>
+					</div>
+					<div class="block-2">
 						<span class="likes">100👍</span>
 						<button class="like-button">Beğen</button>
 					</div>
