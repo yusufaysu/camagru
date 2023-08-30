@@ -2,9 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./styles/header.css">
         <link rel="stylesheet" href="./styles/404.css">
-        <title>Camagru</title>
+        <title>Camagru - 404 Not Found</title>
     </head>
     <body style='background: #29372e'>
         <div class="block" style="  display: flex;
@@ -18,7 +17,6 @@
                 <p1>The link you followed may be broken, or the page may have been removed. Go back to <a href="/" style="color: bisque;">Camagru.</a></p1>
             </div>
         </div>
-
     </body>
 </html>
 
