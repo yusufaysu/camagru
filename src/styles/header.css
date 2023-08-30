@@ -21,7 +21,7 @@
   .overlay__content a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    color: #edf0f1;
+    color: bisque;
     text-decoration: none;
   }
   
@@ -101,7 +101,7 @@
     top: 20px;
     right: 45px;
     font-size: 60px;
-    color: #edf0f1;
+    color: bisque;
   }
   
   @media screen and (max-height: 450px) {
